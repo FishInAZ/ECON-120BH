@@ -14,3 +14,6 @@ use usa_00003.dta, clear
 
 // describe the dataset
 describe
+
+// table of statitics
+summarize
