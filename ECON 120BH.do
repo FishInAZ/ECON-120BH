@@ -17,3 +17,5 @@ describe
 
 // table of statitics
 summarize
+
+// Cluster data based on citizenship and race
