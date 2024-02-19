@@ -34,3 +34,5 @@ drop if incwage == 9999999 | incwage == 999998
 drop if vetstat == 0 | vetstat == 9
 drop if vetstatd == 00 | vetstat == 99
 
+
+
