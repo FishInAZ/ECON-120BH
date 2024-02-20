@@ -91,6 +91,3 @@ gen ln_incwage = ln(incwage) // create log wage
 
 // Original Version
 regress ln_incwage i.stateicp i.sex age i.marst i.citizen yrsusa1 i.speakeng i.gradeatt i.major_field i.empstat uhrswork i.vetstat i.race i.race##i.stateicp i.race##i.gradeatt i.race##i.major_field i.race##i.empstat i.race##c.uhrswork i.race##i.speakeng, robust
-
-// Remove insignificant terms
-
