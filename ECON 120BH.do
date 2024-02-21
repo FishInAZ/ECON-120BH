@@ -93,4 +93,4 @@ gen hourly_wage = incwage / (uhrswork*52)
 gen ln_incwage = ln(hourly_wage) // create log wage
 
 // Original Version
-regress ln_incwage i.stateicp i.sex age i.marst i.citizen yrsusa1 i.speakeng i.gradeatt i.major_field i.empstat uhrswork i.vetstat i.race i.race##i.stateicp i.race##i.gradeatt i.race##i.major_field i.race##i.empstat i.race##c.uhrswork i.race##i.speakeng, robust
+regress ln_incwage i.stateicp i.sex age i.marst i.citizen yrsusa1 i.speakeng i.gradeatt i.major_field i.empstat uhrswork i.vetstat i.race i.race##i.stateicp i.race##i.sex i.race##i.marst i.race##i.gradeatt i.race##i.major_field i.race##i.empstat i.race##c.uhrswork i.race##i.speakeng, robust
