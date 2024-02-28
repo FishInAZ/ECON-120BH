@@ -12,12 +12,6 @@ capture cd "/Users/chenyu/Documents/GitHub/ECON-120BH/usa_00003.dta" //!!\\ PATH
 // Load the dataset
 use usa_00003.dta, clear
 
-// describe the dataset
-describe
-
-// table of statitics
-summarize
-
 // Data Wrangling
 // remove n/a and missing data
 drop if citizen == 0 | citizen == 9
@@ -80,14 +74,21 @@ replace major_field = 5 if major_field == .
 label define major_field_lbl 1 "STEM" 2 "Business" 3 "Arts and Humanities" 4 "Vocational" 5 "Other"
 label values major_field major_field_lbl
 
+// Hourly wage
+gen hourly_wage = incwage / (uhrswork*52)
+
+// Data Overview
+// describe the dataset
+describe
+
+// table of statitics
+summarize
+
 //Data Analysis
 // Revenue
 tabulate race stateicp, summarize(incwage)
 graph box incwage, over(race) horizontal
 graph bar incwage, over(stateicp) over(race) asyvars
-
-// Hourly wage
-gen hourly_wage = incwage / (uhrswork*52)
 
 // regression
 gen ln_incwage = ln(hourly_wage) // create log wage
